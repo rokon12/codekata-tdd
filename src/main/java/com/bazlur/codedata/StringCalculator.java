@@ -18,13 +18,9 @@ public class StringCalculator {
 
     private String[] tokenize(String numbers) {
 
-        if (hasCustomDelimiter(numbers)) {
-
-            return splitWithCustomDelimiter(numbers);
-        } else {
-
-            return splitWithCommaAndNewLine(numbers);
-        }
+        return hasCustomDelimiter(numbers)
+                ? splitWithCustomDelimiter(numbers)
+                : splitWithCommaAndNewLine(numbers);
     }
 
     private boolean hasCustomDelimiter(String numbers) {
